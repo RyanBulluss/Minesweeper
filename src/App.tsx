@@ -1,6 +1,8 @@
-import React from 'react';
-import './App.css';
-import { boardSize, createBoard } from './constants';
+import React from "react";
+import "./App.css";
+import { boardSize, createBoard, addMines, copy2DArray } from "./constants";
+import { useState, useEffect } from "react";
+import GameCell from "./GameCell";
 
 type Cell = {
   isMine: boolean;
@@ -16,13 +18,22 @@ const cell1: Cell = {
   adjacentMines: 0,
 };
 
-
-
 function App() {
-  createBoard(cell1) 
+  const [state, setState] = useState(createBoard(cell1));
+
+  useEffect(() => {
+    setState((s) => {
+      return addMines(s);
+    });
+  }, []);
+
   return (
-    <div className='bg-gray-700 h-[100vh]' > 
-      
+    <div className="bg-green-900 h-[100vh] text-white flex flex-col items-center justify-center">
+      <div className="grid grid-cols-10 w-[70vmin] h-[70vmin] bg-green-700">
+        {state.map((arr, yIndex) =>
+          arr.map((obj, xIndex) => <GameCell content={obj} />)
+        )}
+      </div>
     </div>
   );
 }
