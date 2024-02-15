@@ -7,7 +7,7 @@ interface GameCellProps {
   
     return (
       <div className="bg-gray-500 border">
-        {content.isMine && 0}
+        {content.isMine && 1}
       </div>
     )
   }

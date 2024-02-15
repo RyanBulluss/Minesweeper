@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { boardSize, createBoard, addMines, copy2DArray } from "./constants";
+import { boardSize, createBoard, copy2DArray } from "./constants";
 import { useState, useEffect } from "react";
 import GameCell from "./GameCell";
 
@@ -21,17 +21,11 @@ const cell1: Cell = {
 function App() {
   const [state, setState] = useState(createBoard(cell1));
 
-  useEffect(() => {
-    setState((s) => {
-      return addMines(s);
-    });
-  }, []);
-
   return (
     <div className="bg-green-900 h-[100vh] text-white flex flex-col items-center justify-center">
       <div className="grid grid-cols-10 w-[70vmin] h-[70vmin] bg-green-700">
-        {state.map((arr, yIndex) =>
-          arr.map((obj, xIndex) => <GameCell content={obj} />)
+        {state.map((arr: any, yIndex: any) =>
+          arr.map((obj: any, xIndex: any) => <GameCell content={obj} />)
         )}
       </div>
     </div>
