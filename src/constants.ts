@@ -1,5 +1,3 @@
-import { arrayBuffer } from "stream/consumers";
-
 const boardSize: number = 10;
 const mineTotal: number = 20;
 const adjacents: any = [
@@ -50,15 +48,12 @@ function addMines(arr: any) {
         adjacents.forEach((adj: any) => {
           let newY = y + adj[0];
           let newX = x + adj[1];
-            
-
-          // console.log(newArr[newY][newX]);
+          
           if (newY < boardSize &&
             newY >= 0 &&
             newX < boardSize &&
             newX >= 0) {
             newArr[newY][newX].adjacentMines += 1;
-            console.log(newArr[newY][newX]);
           }
         });
 
