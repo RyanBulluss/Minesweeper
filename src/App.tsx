@@ -26,7 +26,7 @@ function App() {
   function revealCell(y: number, x: number): any {
     if (!playing) return;
     setState((s: any) => {
-      const newState = [...s];
+      const newState = JSON.parse(JSON.stringify(s));;
       // if (newState[y][x].isMine) {
       //   setPlaying(false)
       //   setMessage("YOU DIED DUMBASS!")
