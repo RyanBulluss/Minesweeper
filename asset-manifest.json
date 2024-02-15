@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Minesweeper/static/css/main.82a2c24f.css",
+    "main.js": "/Minesweeper/static/js/main.9d465785.js",
+    "index.html": "/Minesweeper/index.html",
+    "main.82a2c24f.css.map": "/Minesweeper/static/css/main.82a2c24f.css.map",
+    "main.9d465785.js.map": "/Minesweeper/static/js/main.9d465785.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.82a2c24f.css",
+    "static/js/main.9d465785.js"
+  ]
+}
