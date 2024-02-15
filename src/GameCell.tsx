@@ -11,7 +11,6 @@ const GameCell: React.FC<GameCellProps> = ({ content, revealCell, xIndex, yIndex
     <button
       onClick={() => revealCell(yIndex, xIndex)}
       className="bg-gray-500 border flex justify-center items-center"
-
       onContextMenu={(e) => flagCell(e, yIndex, xIndex)}    
     >
       {content.isRevealed && !content.isMine && content.adjacentMines}
@@ -21,6 +20,7 @@ const GameCell: React.FC<GameCellProps> = ({ content, revealCell, xIndex, yIndex
       {content.isFlagged && (
         <div className="w-3/5 h-3/5 bg-orange-500 rounded-full"></div>
       )}
+      {!content.isFlagged && !content.isRevealed && <p className="text-gray-500">A</p>}
     </button>
   );
 };
